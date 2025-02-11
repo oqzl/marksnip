@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>marksnip - share your markdown snippets with ease</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/common.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="marksnip - share your markdown snippets with ease">
+  <meta name="theme-color" content="#002244">
+  <link rel="icon" href="images/icon-192x192.png" sizes="192x192">
+  <link rel="icon" href="images/icon-512x512.png" sizes="512x512">
+</head>
+
+<body>
+  <!-- 共通ヘッダー：ロゴ、テーマ選択プルダウン、エディタの折りたたみ／展開ボタン -->
+  <header class="common-header">
+    <div class="logo">marksnip</div>
+    <div class="header-controls">
+      <label for="themeSelect">theme:</label>
+      <select id="themeSelect">
+        <option value="default">default</option>
+        <option value="mono">mono-space</option>
+        <option value="dark">dark</option>
+        <option value="serif">serif</option>
+        <option value="pastel">pastel</option>
+      </select>
+      <button id="toggleEditorBtn">collapse</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- エディタ部 -->
+    <div class="editor">
+      <div class="toolbar">
+        <button id="downloadBtn">download markdown</button>
+        <button id="dataUrlBtn">create data-url</button>
+      </div>
+      <!-- 文字数カウント表示用 -->
+      <div id="charCount" class="char-count">0 chars</div>
+      <textarea id="markdownInput" placeholder="ここにMarkdownを入力..."></textarea>
+    </div>
+    <!-- プレビュー部 -->
+    <div class="preview">
+      <div class="preview-content" id="previewContent"></div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="common-footer">
+    <p>© 2025 <a href="https://x.com/oqzl">oqzl</a> – please note that content responsibility rests solely with its
+      author or sharer, and we accept no liability for its use.</p>
+  </footer>
+
+  <!-- lz-string.js の読み込み（CDN経由） -->
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
+  <!-- marked.js の読み込み（CDN経由） -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- 共通スクリプト -->
+  <script src="js/common.js"></script>
+</body>
+
+</html>
