@@ -198,7 +198,24 @@ body {
 /* 内部コンテンツは幅708pxに固定し、中央寄せ */
 .preview-content {
 	width: 708px;
-	margin: 0 auto;
+	margin: 0 auto 20px;
+}
+
+/* スマホ用（画面幅768px以下）のスタイル */
+@media (max-width: 768px) {
+	.preview {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.preview-content {
+		width: 100%;
+	}
+
+	.editor {
+		width: 100%;
+		padding: 10px;
+	}
 }
 
 /* リセット＆各要素のスタイル */
