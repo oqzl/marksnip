@@ -106,11 +106,13 @@ getMdBtn.addEventListener('click', () => {
 // PDFダウンロードボタン
 getPdfBtn.addEventListener('click', () => {
     html2pdf()
-        .set({
-            margin: [10, 10, 10, 10],
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        })
         .from(previewContainer)
+        .set({
+            margin: 0,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        })
         .save('document.pdf');
 });
 

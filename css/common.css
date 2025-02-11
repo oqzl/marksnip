@@ -178,6 +178,13 @@ body {
 	color: #333;
 }
 
+/* dark-serif */
+.preview.theme-dserif {
+	font-family: Georgia, "Times New Roman", serif;
+	background-color: #222;
+	color: #ddd;
+}
+
 /* mono */
 .preview.theme-mono {
 	font-family: "Consolas", "Courier New", monospace;
@@ -272,7 +279,9 @@ body {
 }
 
 /* ヘディング以外のブロック要素：左右に余白 */
-.preview-content p,
+.preview-content p {
+	margin: 10px 5px;
+}
 .preview-content ul,
 .preview-content ol,
 .preview-content blockquote,
@@ -306,6 +315,10 @@ body {
 	padding: 2px 4px;
 	border-radius: 3px;
 	font-family: 'Courier New', Courier, monospace;
+}
+
+.preview-content br {
+	page-break-after: always;
 }
 
 /* ------------------------------- */
