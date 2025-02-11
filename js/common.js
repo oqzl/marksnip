@@ -68,7 +68,7 @@ function loadFromHash() {
         updatePreview();
         // data-url で開かれた場合は自動でエディタを折りたたむ
         container.classList.add('collapsed');
-        toggleEditorBtn.textContent = "expand";
+        toggleEditorBtn.textContent = "edit";
     } else if (markdownInput.value.trim() === "") {
         // ハッシュがない、またはエディタが空の場合は default.md を読み込む
         loadDefaultSnippet();
@@ -79,10 +79,10 @@ function loadFromHash() {
 toggleEditorBtn.addEventListener('click', () => {
     if (container.classList.contains('collapsed')) {
         container.classList.remove('collapsed');
-        toggleEditorBtn.textContent = "collapse";
+        toggleEditorBtn.textContent = "view";
     } else {
         container.classList.add('collapsed');
-        toggleEditorBtn.textContent = "expand";
+        toggleEditorBtn.textContent = "edit";
     }
 });
 

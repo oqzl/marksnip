@@ -7,7 +7,7 @@ _marksnip_ is a modern markdown editor that lets you write, preview, and share y
 - **live preview:** see your formatted content update in real time.
 - **theming:** choose from multiple themes including dark, serif, mono-space, and pastel.
 - **get .md**: download your content as a Markdown file for easy offline editing.
-- **get .pdf**: export your formatted content as a PDF file.
+- **get .pdf**: export your formatted content as a PDF file (may not work on some mobile browsers, especially iOS Safari).
 - **share url**: generate a unique url that encodes your markdown content for easy sharing, with automatic URL shortening on Twitter.
 - **pwa enabled:** install marksnip on your mobile device for a native app experience.
 
