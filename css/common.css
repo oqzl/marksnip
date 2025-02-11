@@ -5,68 +5,81 @@ body {
 	margin: 0;
 	font-family: "Consolas", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #f7f7f7;
-  }
-  
-  /* ------------------------------- */
-  /* 共通ヘッダー */
-  /* ------------------------------- */
-  .common-header {
+}
+
+/* ------------------------------- */
+/* 共通ヘッダー */
+/* ------------------------------- */
+.common-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #002244; /* クールなダークブルー */
-	color: #f8f8ff;           /* 乳白色（ロゴ・テキスト） */
+	background-color: #002244;
+	/* クールなダークブルー */
+	color: #f8f8ff;
+	/* 乳白色（ロゴ・テキスト） */
 	border-bottom: 1px solid #ddd;
 	padding: 10px 20px;
 	box-sizing: border-box;
-  }
-  .common-header .logo {
+}
+
+.common-header .logo {
 	font-size: 20px;
 	font-weight: bold;
 	color: #f8f8ff;
-  }
-  .common-header .header-controls {
+	/* 白色 */
+	text-decoration: none;
+	/* 下線なし */
+}
+
+.common-header .header-controls {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-  }
-  .common-header select,
-  .common-header button {
+}
+
+.common-header select,
+.common-header button {
 	padding: 5px 10px;
 	font-size: 14px;
 	cursor: pointer;
-  }
-  
-  /* ------------------------------- */
-  /* コンテナ（エディタ部＆プレビュー部） */
-  /* ------------------------------- */
-  /* コンテンツが多い場合に伸びるよう最小高さを指定 */
-  .container {
+}
+
+/* ------------------------------- */
+/* コンテナ（エディタ部＆プレビュー部） */
+/* ------------------------------- */
+/* コンテンツが多い場合に伸びるよう最小高さを指定 */
+.container {
 	display: flex;
-	min-height: calc(100vh - 120px); /* ヘッダー分の高さを除外 */
-  }
-  .container.collapsed .editor {
+	min-height: calc(100vh - 120px);
+	/* ヘッダー分の高さを除外 */
+}
+
+.container.collapsed .editor {
 	display: none;
-  }
-  
-  /* ------------------------------- */
-  /* エディタ部 */
-  /* ------------------------------- */
-  .editor {
+}
+
+/* ------------------------------- */
+/* エディタ部 */
+/* ------------------------------- */
+.editor {
 	width: 50%;
 	padding: 15px;
 	box-sizing: border-box;
 	border-right: 1px solid #ddd;
 	background-color: #fff;
-	position: relative; /* 文字数カウントの絶対配置用 */
-  }
-  .editor .toolbar {
+	position: relative;
+	/* 文字数カウントの絶対配置用 */
+}
+
+.editor .toolbar {
 	display: flex;
 	justify-content: flex-start;
 	gap: 10px;
 	margin-bottom: 10px;
-  }
-  .editor button {
+}
+
+.editor button {
 	padding: 5px 10px;
 	font-size: 14px;
 	cursor: pointer;
@@ -74,11 +87,13 @@ body {
 	background-color: #e9e9e9;
 	border-radius: 3px;
 	transition: background-color 0.2s ease;
-  }
-  .editor button:hover {
+}
+
+.editor button:hover {
 	background-color: #d0d0d0;
-  }
-  .editor textarea {
+}
+
+.editor textarea {
 	width: 100%;
 	height: calc(100% - 50px);
 	padding: 10px;
@@ -88,165 +103,176 @@ body {
 	border: 1px solid #ddd;
 	border-radius: 3px;
 	resize: none;
-  }
-  
-  /* 文字数カウント（エディタ部の上右端に配置） */
-  .char-count {
+}
+
+/* 文字数カウント（エディタ部の上右端に配置） */
+.char-count {
 	position: absolute;
 	top: 10px;
 	right: 15px;
 	font-size: 12px;
 	color: #666;
-  }
-  
-  /* ------------------------------- */
-  /* プレビュー部 */
-  /* ------------------------------- */
-  /* 固定幅820px、中央寄せ。独自スクロールはなく、全体のスクロールに任せる */
-  .preview {
+}
+
+/* ------------------------------- */
+/* プレビュー部 */
+/* ------------------------------- */
+/* 固定幅820px、中央寄せ。独自スクロールはなく、全体のスクロールに任せる */
+.preview {
 	width: 820px;
 	padding: 15px;
 	box-sizing: border-box;
 	margin: 0 auto;
-	
+
 	/* テーマ適用用の共通ベーススタイル */
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.8;
 	color: #333;
 	background-color: #fff;
-  }
-  
-  /* テーマ別スタイル（.preview に適用） */
-  /* default */
-  .preview.theme-default {
+}
+
+/* テーマ別スタイル（.preview に適用） */
+/* default */
+.preview.theme-default {
 	background-color: #fff;
 	color: #333;
-  }
-  /* dark */
-  .preview.theme-dark {
+}
+
+/* dark */
+.preview.theme-dark {
 	background-color: #222;
 	color: #ddd;
-  }
-  /* serif */
-  .preview.theme-serif {
+}
+
+/* serif */
+.preview.theme-serif {
 	font-family: Georgia, "Times New Roman", serif;
 	background-color: #fff;
 	color: #333;
-  }
-  /* mono */
-  .preview.theme-mono {
+}
+
+/* mono */
+.preview.theme-mono {
 	font-family: "Consolas", "Courier New", monospace;
 	background-color: #f0f0f0;
 	color: #333;
-  }
-  /* pastel */
-  .preview.theme-pastel {
+}
+
+/* pastel */
+.preview.theme-pastel {
 	background-color: #fefbd8;
 	color: #555;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-  
-  /* ------------------------------- */
-  /* プレビューコンテンツ */
-  /* ------------------------------- */
-  /* 内部コンテンツは幅708pxに固定し、中央寄せ */
-  .preview-content {
+}
+
+/* ------------------------------- */
+/* プレビューコンテンツ */
+/* ------------------------------- */
+/* 内部コンテンツは幅708pxに固定し、中央寄せ */
+.preview-content {
 	width: 708px;
 	margin: 0 auto;
-  }
-  
-  /* リセット＆各要素のスタイル */
-  .preview-content h1,
-  .preview-content h2,
-  .preview-content h3,
-  .preview-content h4,
-  .preview-content h5,
-  .preview-content h6,
-  .preview-content p,
-  .preview-content ul,
-  .preview-content ol,
-  .preview-content li,
-  .preview-content pre,
-  .preview-content code,
-  .preview-content blockquote,
-  .preview-content figure,
-  .preview-content figcaption,
-  .preview-content hr {
+}
+
+/* リセット＆各要素のスタイル */
+.preview-content h1,
+.preview-content h2,
+.preview-content h3,
+.preview-content h4,
+.preview-content h5,
+.preview-content h6,
+.preview-content p,
+.preview-content ul,
+.preview-content ol,
+.preview-content li,
+.preview-content pre,
+.preview-content code,
+.preview-content blockquote,
+.preview-content figure,
+.preview-content figcaption,
+.preview-content hr {
 	margin: 0;
 	padding: 0;
 	border: 0;
-  }
-  
-  /* ヘディングのスタイル：より大きく差をつけたサイズと余白 */
-  .preview-content h1 { 
-	font-size: 2.5em; 
-	margin: 40px 0 20px; 
-  }
-  .preview-content h2 { 
-	font-size: 2.1em; 
-	margin: 35px 0 18px; 
-  }
-  .preview-content h3 { 
-	font-size: 1.8em; 
-	margin: 30px 0 16px; 
-  }
-  .preview-content h4 { 
-	font-size: 1.5em; 
-	margin: 25px 0 14px; 
-  }
-  .preview-content h5 { 
-	font-size: 1.3em; 
-	margin: 20px 0 12px; 
-  }
-  .preview-content h6 { 
-	font-size: 1.1em; 
-	margin: 15px 0 10px; 
-  }
-  
-  /* ヘディング以外のブロック要素：左右に余白 */
-  .preview-content p,
-  .preview-content ul,
-  .preview-content ol,
-  .preview-content blockquote,
-  .preview-content pre {
+}
+
+/* ヘディングのスタイル：より大きく差をつけたサイズと余白 */
+.preview-content h1 {
+	font-size: 2.5em;
+	margin: 40px 0 20px;
+}
+
+.preview-content h2 {
+	font-size: 2.1em;
+	margin: 35px 0 18px;
+}
+
+.preview-content h3 {
+	font-size: 1.8em;
+	margin: 30px 0 16px;
+}
+
+.preview-content h4 {
+	font-size: 1.5em;
+	margin: 25px 0 14px;
+}
+
+.preview-content h5 {
+	font-size: 1.3em;
+	margin: 20px 0 12px;
+}
+
+.preview-content h6 {
+	font-size: 1.1em;
+	margin: 15px 0 10px;
+}
+
+/* ヘディング以外のブロック要素：左右に余白 */
+.preview-content p,
+.preview-content ul,
+.preview-content ol,
+.preview-content blockquote,
+.preview-content pre {
 	margin-left: 20px;
 	margin-right: 20px;
-  }
-  
-  /* リンクとインラインコード */
-  .preview-content a {
+}
+
+/* リンクとインラインコード */
+.preview-content a {
 	color: #3498db;
 	text-decoration: none;
-  }
-  .preview-content a:hover {
+}
+
+.preview-content a:hover {
 	text-decoration: underline;
-  }
-  
-  /* コードブロックおよびインラインコードのスタイル */
-  /* 共通部分：背景色はカスタムプロパティ (--code-bg) を使用して各テーマごとに設定 */
-  .preview-content pre {
+}
+
+/* コードブロックおよびインラインコードのスタイル */
+/* 共通部分：背景色はカスタムプロパティ (--code-bg) を使用して各テーマごとに設定 */
+.preview-content pre {
 	background-color: var(--code-bg, rgba(255, 255, 255, 0.7));
 	padding: 10px;
 	border-radius: 3px;
 	overflow-x: auto;
 	margin: 10px 0;
-  }
-  .preview-content code {
+}
+
+.preview-content code {
 	background-color: var(--code-bg, rgba(255, 255, 255, 0.7));
 	padding: 2px 4px;
 	border-radius: 3px;
 	font-family: 'Courier New', Courier, monospace;
-  }
-  
-  /* ------------------------------- */
-  /* フッター */
-  /* ------------------------------- */
-  .common-footer {
+}
+
+/* ------------------------------- */
+/* フッター */
+/* ------------------------------- */
+.common-footer {
 	background-color: #f7f7f7;
 	color: #555;
 	text-align: center;
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
 	font-size: 12px;
-  }
+}
