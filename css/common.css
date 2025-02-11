@@ -52,7 +52,33 @@ body {
 .container {
 	display: flex;
 	min-height: calc(100vh - 120px);
-	/* ヘッダー分の高さを除外 */
+	/* ヘッダー・フッター分の高さを除外 */
+}
+
+/* スマホ用（画面幅768px以下）のレイアウト */
+@media (max-width: 768px) {
+	.container {
+		/* 縦並びに切り替え */
+		flex-direction: column;
+	}
+
+	.preview,
+	.editor {
+		/* 幅100% */
+		width: 100%;
+		padding: 10px;
+	}
+
+	/* 順序の調整：HTMLの要素順が異なる場合に使用 */
+	.preview {
+		/* プレビューを上に */
+		order: 1;
+	}
+
+	.editor {
+		/* エディタを下に */
+		order: 2;
+	}
 }
 
 .container.collapsed .editor {
