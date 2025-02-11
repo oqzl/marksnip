@@ -37,7 +37,7 @@ function updatePreview() {
 
 // default.md をフェッチしてデフォルトスニペットを読み込む
 function loadDefaultSnippet() {
-    fetch('default.md')
+    fetch('README.md')
         .then(response => {
             if (!response.ok) {
                 throw new Error('network response was not ok');
