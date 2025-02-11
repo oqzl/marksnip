@@ -20,4 +20,5 @@ enjoy creating and sharing your markdown with marksnip!
 
 ## repository & license
 - Repository: [marksnip on GitHub](https://github.com/oqzl/marksnip)
+- Demo: [Live Sample](https://oqzl.github.io/marksnip/)
 - License: MIT License
