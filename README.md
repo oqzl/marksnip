@@ -1,6 +1,6 @@
-# welcome to marksnip
+# marksnip
 
-__marksnip__ is a modern markdown editor that lets you write, preview, and share your markdown content instantly.
+_marksnip_ is a modern markdown editor that lets you write, preview, and share your markdown content instantly.
 
 ## features
 
@@ -19,6 +19,7 @@ __marksnip__ is a modern markdown editor that lets you write, preview, and share
 enjoy creating and sharing your markdown with marksnip!
 
 ## repository & license
+
 - Repository: [marksnip on GitHub](https://github.com/oqzl/marksnip)
 - Demo: [Live Sample](https://oqzl.github.io/marksnip/)
 - License: MIT License
