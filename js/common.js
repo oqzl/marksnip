@@ -110,7 +110,11 @@ getPdfBtn.addEventListener('click', () => {
         .set({
             margin: 0,
             image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
+            html2canvas: {
+                scale: window.devicePixelRatio > 1 ? 1.5 : 2, // iOSのメモリ対策
+                logging: false,
+                useCORS: true, // クロスオリジン問題対策
+            },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         })
         .save('document.pdf');
