@@ -46,6 +46,18 @@ body {
 }
 
 /* ------------------------------- */
+/* フッター */
+/* ------------------------------- */
+.common-footer {
+	background-color: #f7f7f7;
+	color: #555;
+	text-align: center;
+	padding: 10px 20px;
+	border-top: 1px solid #ddd;
+	font-size: 12px;
+}
+
+/* ------------------------------- */
 /* コンテナ（エディタ部＆プレビュー部） */
 /* ------------------------------- */
 /* コンテンツが多い場合に伸びるよう最小高さを指定 */
@@ -199,7 +211,7 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* ------------------------------- */
+/* -------------------------------
 /* プレビューコンテンツ */
 /* ------------------------------- */
 /* 内部コンテンツは幅708pxに固定し、中央寄せ */
@@ -225,7 +237,11 @@ body {
 	}
 }
 
-/* リセット＆各要素のスタイル */
+/* =======================================
+   Markdown プレビュー用スタイル
+   ======================================= */
+
+/* リセット＆各要素の基本スタイル */
 .preview-content h1,
 .preview-content h2,
 .preview-content h3,
@@ -241,56 +257,119 @@ body {
 .preview-content blockquote,
 .preview-content figure,
 .preview-content figcaption,
-.preview-content hr {
+.preview-content hr,
+.preview-content table,
+.preview-content img {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
-/* ヘディングのスタイル：より大きく差をつけたサイズと余白 */
+/* ヘディングのスタイル */
 .preview-content h1 {
 	font-size: 2.5em;
 	margin: 40px 0 20px;
+	font-weight: bold;
 }
 
 .preview-content h2 {
 	font-size: 2.1em;
 	margin: 35px 0 18px;
+	font-weight: bold;
 }
 
 .preview-content h3 {
 	font-size: 1.8em;
 	margin: 30px 0 16px;
+	font-weight: bold;
 }
 
 .preview-content h4 {
 	font-size: 1.5em;
 	margin: 25px 0 14px;
+	font-weight: bold;
 }
 
 .preview-content h5 {
 	font-size: 1.3em;
 	margin: 20px 0 12px;
+	font-weight: bold;
 }
 
 .preview-content h6 {
 	font-size: 1.1em;
 	margin: 15px 0 10px;
+	font-weight: bold;
 }
 
-/* ヘディング以外のブロック要素：左右に余白 */
+/* 段落 */
 .preview-content p {
 	margin: 10px 5px;
-}
-.preview-content ul,
-.preview-content ol,
-.preview-content blockquote,
-.preview-content pre {
-	margin-left: 20px;
-	margin-right: 20px;
+	line-height: 1.6;
 }
 
-/* リンクとインラインコード */
+/* リスト */
+.preview-content ul {
+	margin: 10px 20px;
+	padding-left: 20px;
+	list-style: disc;
+}
+
+.preview-content ol {
+	margin: 10px 20px;
+	padding-left: 20px;
+	list-style: decimal;
+}
+
+.preview-content li {
+	margin: 5px 0;
+}
+
+/* 引用（Blockquote） */
+.preview-content blockquote {
+	margin: 20px;
+	padding: 15px;
+	border-left: 4px solid #3498db;
+	background: rgba(52, 152, 219, 0.1);
+	font-style: italic;
+}
+
+/* 水平線（hr） */
+.preview-content hr {
+	border: 0;
+	height: 1px;
+	background: #ddd;
+	margin: 20px 0;
+}
+
+/* テーブル */
+.preview-content table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.preview-content th,
+.preview-content td {
+	padding: 10px;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+.preview-content th {
+	font-weight: bold;
+	background-color: #66666644;
+}
+
+/* 画像 */
+.preview-content img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 10px 0;
+}
+
+/* リンク */
 .preview-content a {
 	color: #3498db;
 	text-decoration: none;
@@ -300,35 +379,60 @@ body {
 	text-decoration: underline;
 }
 
-/* コードブロックおよびインラインコードのスタイル */
-/* 共通部分：背景色はカスタムプロパティ (--code-bg) を使用して各テーマごとに設定 */
+/* コード */
 .preview-content pre {
-	background-color: var(--code-bg, rgba(255, 255, 255, 0.7));
-	padding: 10px;
-	border-radius: 3px;
+	background-color: var(--code-bg, #f4f4f4);
+	padding: 15px;
+	border-radius: 5px;
 	overflow-x: auto;
 	margin: 10px 0;
+	font-size: 0.95em;
 }
 
 .preview-content code {
-	background-color: var(--code-bg, rgba(255, 255, 255, 0.7));
-	padding: 2px 4px;
+	background-color: var(--code-bg, #f4f4f4);
+	padding: 2px 5px;
 	border-radius: 3px;
 	font-family: 'Courier New', Courier, monospace;
+	color: #e74c3c;
 }
 
+/* コードブロック（pre > code） */
+.preview-content pre code {
+	background: none;
+	padding: 0;
+	display: block;
+}
+
+/* br の改ページ処理 */
 .preview-content br {
 	page-break-after: always;
 }
 
-/* ------------------------------- */
-/* フッター */
-/* ------------------------------- */
-.common-footer {
-	background-color: #f7f7f7;
-	color: #555;
-	text-align: center;
-	padding: 10px 20px;
-	border-top: 1px solid #ddd;
-	font-size: 12px;
+/* =======================================
+   ダークテーマ対応（カスタムプロパティ）
+   ======================================= */
+@media (prefers-color-scheme: dark) {
+    .preview-content {
+        background-color: #222;
+        color: #eee;
+    }
+
+    .preview-content a {
+        color: #1abc9c;
+    }
+
+    .preview-content pre {
+        background-color: #333;
+    }
+
+    .preview-content code {
+        background-color: #444;
+        color: #ffcc66;
+    }
+
+    .preview-content blockquote {
+        border-left-color: #1abc9c;
+        background: rgba(26, 188, 156, 0.1);
+    }
 }
