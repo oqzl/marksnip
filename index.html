@@ -12,6 +12,11 @@
   <link rel="icon" href="images/icon-192x192.png" sizes="192x192">
   <link rel="icon" href="images/icon-512x512.png" sizes="512x512">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- OGP用メタタグ -->
+  <meta property="og:title" content="marksnip" />
+  <meta property="og:description" content="marksnip is a modern markdown editor that lets you write, preview, and share your markdown content instantly." />
+  <meta property="og:url" content="https://oqzl.github.io/marksnip/" />
+  <meta property="og:type" content="website" />
 </head>
 
 <body>
@@ -35,8 +40,9 @@
     <!-- エディタ部 -->
     <div class="editor">
       <div class="toolbar">
-        <button id="downloadBtn">download markdown</button>
-        <button id="dataUrlBtn">create data-url</button>
+        <button id="getMdBtn">get .md</button>
+        <button id="getPdfBtn">get .pdf</button>
+        <button id="shareUrlBtn">share url</button>
       </div>
       <!-- 文字数カウント表示用 -->
       <div id="charCount" class="char-count">0 chars</div>
@@ -58,6 +64,8 @@
   <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
   <!-- marked.js の読み込み（CDN経由） -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- html2pdf.js の読み込み（CDN経由） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <!-- 共通スクリプト -->
   <script src="js/common.js"></script>
 </body>

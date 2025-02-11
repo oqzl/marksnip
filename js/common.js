@@ -2,8 +2,9 @@
 const markdownInput = document.getElementById('markdownInput');
 const previewContent = document.getElementById('previewContent');
 const previewContainer = document.querySelector('.preview');
-const downloadBtn = document.getElementById('downloadBtn');
-const dataUrlBtn = document.getElementById('dataUrlBtn');
+const getMdBtn = document.getElementById('getMdBtn');
+const getPdfBtn = document.getElementById('getPdfBtn');
+const shareUrlBtn = document.getElementById('shareUrlBtn');
 const toggleEditorBtn = document.getElementById('toggleEditorBtn');
 const themeSelect = document.getElementById('themeSelect');
 const container = document.querySelector('.container');
@@ -89,8 +90,8 @@ toggleEditorBtn.addEventListener('click', () => {
 markdownInput.addEventListener('input', updatePreview);
 themeSelect.addEventListener('change', updateTheme);
 
-// ダウンロードボタン：Markdownファイルとして保存
-downloadBtn.addEventListener('click', () => {
+// Markdownダウンロードボタン
+getMdBtn.addEventListener('click', () => {
     const blob = new Blob([markdownInput.value], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -102,15 +103,21 @@ downloadBtn.addEventListener('click', () => {
     URL.revokeObjectURL(url);
 });
 
-// Data‑URL機能：LZ‑string で圧縮し、短縮パラメータ名で URL を生成・更新・コピー
-dataUrlBtn.addEventListener('click', () => {
-    // エディタ部を折りたたむ
-    container.classList.add('collapsed');
-    toggleEditorBtn.textContent = "expand";
+// PDFダウンロードボタン
+getPdfBtn.addEventListener('click', () => {
+    html2pdf()
+        .set({
+            margin: [10, 10, 10, 10],
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        })
+        .from(previewContainer)
+        .save('document.pdf');
+});
 
+// Data‑URL機能：LZ‑string で圧縮し、短縮パラメータ名で URL を生成・更新・コピー
+shareUrlBtn.addEventListener('click', () => {
     const newUrl = generateDataUrl();
     history.pushState(null, '', newUrl);
-
     // クリップボードへコピー
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(newUrl).then(() => {
