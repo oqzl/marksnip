@@ -408,31 +408,3 @@ body {
 .preview-content br {
 	page-break-after: always;
 }
-
-/* =======================================
-   ダークテーマ対応（カスタムプロパティ）
-   ======================================= */
-@media (prefers-color-scheme: dark) {
-    .preview-content {
-        background-color: #222;
-        color: #eee;
-    }
-
-    .preview-content a {
-        color: #1abc9c;
-    }
-
-    .preview-content pre {
-        background-color: #333;
-    }
-
-    .preview-content code {
-        background-color: #444;
-        color: #ffcc66;
-    }
-
-    .preview-content blockquote {
-        border-left-color: #1abc9c;
-        background: rgba(26, 188, 156, 0.1);
-    }
-}
