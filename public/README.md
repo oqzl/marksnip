@@ -27,3 +27,9 @@ enjoy creating and sharing your markdown with marksnip!
 - repository: [marksnip on GitHub](https://github.com/oqzl/marksnip)
 - demo: [live sample](https://marksnip.oqzl.net/)
 - license: MIT
+
+<br />
+
+## tips
+
+- write `<br />` to page break on pdf. 
