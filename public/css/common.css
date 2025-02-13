@@ -24,6 +24,9 @@ body {
 }
 
 .common-header .logo {
+	display: flex;
+	align-items: center;
+	gap: 8px; /* ロゴ画像とテキストの間隔 */
 	font-size: 20px;
 	font-weight: bold;
 	color: #f8f8ff;
@@ -31,6 +34,12 @@ body {
 	text-decoration: none;
 	/* 下線なし */
 }
+
+.common-header .logo-image {
+	width: 24px; /* ちょうどいいサイズに調整 */
+	height: auto;
+}
+
 
 .common-header .header-controls {
 	display: flex;
