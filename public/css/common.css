@@ -277,37 +277,37 @@ body {
 /* ヘディングのスタイル */
 .preview-content h1 {
 	font-size: 2.5em;
-	margin: 40px 0 20px;
+	margin: 30px 0 15px;
 	font-weight: bold;
 }
 
 .preview-content h2 {
 	font-size: 2.1em;
-	margin: 35px 0 18px;
+	margin: 25px 0 13px;
 	font-weight: bold;
 }
 
 .preview-content h3 {
 	font-size: 1.8em;
-	margin: 30px 0 16px;
+	margin: 21px 0 12px;
 	font-weight: bold;
 }
 
 .preview-content h4 {
 	font-size: 1.5em;
-	margin: 25px 0 14px;
+	margin: 19px 0 11px;
 	font-weight: bold;
 }
 
 .preview-content h5 {
 	font-size: 1.3em;
-	margin: 20px 0 12px;
+	margin: 17px 0 10px;
 	font-weight: bold;
 }
 
 .preview-content h6 {
 	font-size: 1.1em;
-	margin: 15px 0 10px;
+	margin: 15px 0 9px;
 	font-weight: bold;
 }
 
