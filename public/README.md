@@ -1,4 +1,5 @@
-![marksnip logo](https://marksnip.oqzl.net/images/marksnip_logo.png)
+<img src="https://marksnip.oqzl.net/images/marksnip_logo.png" alt="marksnip" width="96" />
+
 # marksnip
 
 _marksnip_ is a modern markdown editor that lets you write, preview, and share your markdown content instantly.
