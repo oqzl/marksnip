@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>marksnip - Markdown that lives in the URL</title>
+  <meta name="description" content="Markdown that lives in the URL. No account, database, or upload required.">
+  <meta name="theme-color" content="#002244">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="marksnip">
+
+  <link rel="manifest" href="manifest.json?v=__COMMIT_SHA__">
+  <link rel="stylesheet" href="css/common.css?v=__COMMIT_SHA__">
+  <link rel="icon" href="images/favicon.png?v=__COMMIT_SHA__" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/marksnip_icon.png?v=__COMMIT_SHA__">
+
+  <meta property="og:title" content="marksnip">
+  <meta property="og:description" content="Markdown that lives in the URL. No account, database, or upload required.">
+  <meta property="og:url" content="https://marksnip.oqzl.net/">
+  <meta property="og:type" content="website">
+  <!--GA_TAG-->
+</head>
+
+<body>
+  <header class="common-header">
+    <a href="https://marksnip.oqzl.net/" class="logo">
+      <img src="images/marksnip_logo.png?v=__COMMIT_SHA__" alt="marksnip logo" class="logo-image">
+      marksnip
+    </a>
+    <div class="header-controls">
+      <select id="themeSelect" aria-label="Theme">
+        <option value="default">default</option>
+        <option value="serif">serif</option>
+        <option value="dark">dark</option>
+        <option value="dserif">dark-serif</option>
+        <option value="mono">mono</option>
+        <option value="pastel">pastel</option>
+      </select>
+      <button id="toggleEditorBtn">view</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="editor">
+      <div class="toolbar">
+        <button id="getMdBtn">get .md</button>
+        <button id="getPdfBtn">get .pdf</button>
+        <button id="shareUrlBtn">share url</button>
+      </div>
+      <div id="charCount" class="char-count">0 chars</div>
+      <textarea id="markdownInput" placeholder="Write Markdown here..."></textarea>
+    </div>
+    <div class="preview">
+      <div class="preview-content" id="previewContent"></div>
+    </div>
+  </div>
+
+  <footer class="common-footer">
+    <p>© 2025 <a href="https://oqzl.net/">oqzl</a> – content responsibility rests solely with its author or sharer.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/common.js?v=__COMMIT_SHA__"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', async () => {
+        try {
+          const registration = await navigator.serviceWorker.register(
+            'sw.js?v=__COMMIT_SHA__',
+            { updateViaCache: 'none' }
+          );
+          registration.update();
+        } catch (error) {
+          console.warn('Service Worker registration failed:', error);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "marksnip",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/prepare-deploy.mjs",
+    "dev": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.132.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "short_name": "marksnip",
+  "name": "marksnip - Markdown that lives in the URL",
+  "icons": [
+    {
+      "src": "images/marksnip_icon.png?v=__COMMIT_SHA__",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#002244"
+}
